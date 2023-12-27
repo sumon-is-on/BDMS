@@ -27,7 +27,7 @@
                                 <button type="button" class="btn btn-success form-control w-30">Donate Blood</button>
                             </a>
                             <div style="margin: 0 50px;"></div>
-                            <a href="">
+                            <a href="{{ route('request.create') }}">
                                 <button type="button" class="btn btn-info form-control w-30">Ask For Blood</button>
                             </a>
                         </div>

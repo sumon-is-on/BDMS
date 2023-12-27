@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Web\AuthController as WebAuthController;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\RequestController;
 
 Route::get('/',[HomeController::class,'home'])->name('web.home');
 
@@ -22,6 +23,10 @@ Route::get('user_registration',[WebAuthController::class,'registration'])->name(
 Route::post('user_registration',[WebAuthController::class,'registrationPost'])->name('user.registration.post');
 
 
+
+# Blood Asking
+Route::get('/blood_request',[RequestController::class,'create'])->name('request.create');
+Route::post('/blood_request_post',[RequestController::class,'store'])->name('request.post');
 
 
 

@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class=" mr-4">
-                    <a href="#" class="btn btn-outline-success">Profile</a>
+                    <a href="{{ route('user.show', auth()->user()->id) }}" class="btn btn-outline-success">Profile</a>
                     <a href="{{ route('admin.logout') }}" class="btn btn-outline-danger">LogOut</a>
                 </div>
             </div>
