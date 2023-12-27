@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DonorController;
 use App\Http\Controllers\Backend\PatientController;
+use App\Http\Controllers\Backend\RequestController as BackendRequestController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Web\AuthController as WebAuthController;
@@ -58,6 +59,10 @@ Route::middleware('auth')->group(function(){
     # Patients
     Route::get('donor_index',[DonorController::class,'index'])->name('donor.index');
     Route::get('donor_view/{id}',[DonorController::class,'show'])->name('donor.show');
+
+
+    # Blood Request
+    Route::get('blood_request_list',[BackendRequestController::class,'index'])->name('backend.request.list');
 
     #Service
     Route::get('service_index',[ServiceController::class,'index'])->name('service.index');

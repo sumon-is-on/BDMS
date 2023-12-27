@@ -40,8 +40,8 @@
                                     <input type="date" name="required_date" class="form-control rounded-left">
                                 </div>
                                 <div class="form-group">
-                                    <label for="required_date" class="block mb-2 font-medium text-gray-900 dark:text-white">Required Date</label>
-                                    <input type="time" name="required_date" class="form-control rounded-left">
+                                    <label for="required_time" class="block mb-2 font-medium text-gray-900 dark:text-white">Required Time</label>
+                                    <input type="time" name="required_time" class="form-control rounded-left">
                                 </div>
                             </div>
 

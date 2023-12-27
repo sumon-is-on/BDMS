@@ -21,6 +21,9 @@
                     <a href="{{ route('donor.index') }}" class="nav-link"><p>Donors</p></a>
                 </li>
                 <li class="nav-item menu-open">
+                    <a href="{{ route('backend.request.list') }}" class="nav-link"><p>Blood Req: List</p></a>
+                </li>
+                <li class="nav-item menu-open">
                     <a href="{{ route('service.index') }}" class="nav-link"><p>Services</p></a>
                 </li>
             </ul>

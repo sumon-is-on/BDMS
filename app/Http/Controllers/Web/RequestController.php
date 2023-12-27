@@ -30,6 +30,7 @@ class RequestController extends Controller
             BloodRequest::create([
                 'patient_id'=>$request->patient_id,
                 'hospital'=>$request->hospital,
+                'operation'=>$request->operation,
                 'hospital_address'=>$request->hospital_address,
                 'asking_bg'=>$request->asking_bg,
                 'required_date'=>$request->required_date,
