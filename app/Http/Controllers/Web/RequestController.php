@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Validator;
 
 class RequestController extends Controller
 {
+    public function index(){
+        $brs = BloodRequest::with('Patient','Donor')->get();
+        return view('Web.Request.index', compact('brs'));
+    }
+
     public function create(){
         if(! auth()->user()){
             notify()->warning("Please Login to ask for blood");
@@ -42,5 +47,11 @@ class RequestController extends Controller
             // notify()->error($th->getMessage());
             return redirect()->back();
         }
+    }
+
+    public function show($id){
+        $br = BloodRequest::with('Patient')->find($id);
+        return view('Web.Request.show',compact('br'));
+
     }
 }

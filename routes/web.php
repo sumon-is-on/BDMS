@@ -24,8 +24,10 @@ Route::get('user_registration',[WebAuthController::class,'registration'])->name(
 Route::post('user_registration',[WebAuthController::class,'registrationPost'])->name('user.registration.post');
 
 
-
-# Blood Asking
+# Blood Request List In web
+Route::get('br_list',[RequestController::class,'index'])->name('web.request.list');
+Route::get('br_show/{id}',[RequestController::class,'show'])->name('web.request.show');
+# Blood Request
 Route::get('/blood_request',[RequestController::class,'create'])->name('request.create');
 Route::post('/blood_request_post',[RequestController::class,'store'])->name('request.post');
 

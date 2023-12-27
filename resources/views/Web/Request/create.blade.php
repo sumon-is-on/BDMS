@@ -7,15 +7,6 @@
                 <div class="login-wrap p-4 p-md-5">
                     <h4 class="text-center mb-4">Please Fill up this form to ask for Blood</h4>
                     <form action="{{ route('request.post') }}" method="POST" class="login-form" enctype="multipart/form-data">
-                        @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
