@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('hospital')->nullable();
             $table->string('hospital_address')->nullable();
             $table->string('operation')->nullable();
+            $table->string('qty')->nullable();
             $table->string('asking_bg')->nullable();
             $table->string('required_date')->nullable();
             $table->string('required_time')->nullable();

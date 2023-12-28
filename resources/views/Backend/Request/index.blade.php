@@ -34,6 +34,7 @@
                     <th scope="col" class="py-3 px-6">Hospital </th>
                     <th scope="col" class="py-3 px-6">Hospital Address</th>
                     <th scope="col" class="py-3 px-6">Asking Blood Group</th>
+                    <th scope="col" class="py-3 px-6">Quantity</th>
                     <th scope="col" class="py-3 px-6">Required Date</th>
                     <th scope="col" class="py-3 px-6">Required Time</th>
                     <th scope="col" class="py-3 px-6">Donor Name</th>
@@ -49,6 +50,7 @@
                     <td class="py-1 px-6 uppercase">{{ $brs->hospital }}</td>
                     <td class="py-1 px-6 uppercase">{{ $brs->hospital_address }}</td>
                     <td class="py-1 px-6 uppercase">{{ $brs->asking_bg }}</td>
+                    <td class="py-1 px-6 uppercase">{{ $brs->qty }} Bag</td>
                     <td class="py-1 px-6 uppercase">{{ $brs->required_date }}</td>
                     <td class="py-1 px-6 uppercase">{{ $brs->required_time }}</td>
                     <td class="py-1 px-6 uppercase">{{ $brs->Donor->name ?? " "}}</td>

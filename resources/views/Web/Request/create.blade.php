@@ -27,6 +27,10 @@
                                     <input type="text" name="asking_bg" class="form-control rounded-left">
                                 </div>
                                 <div class="form-group">
+                                    <label for="qty" class="block mb-2 font-medium text-gray-900 dark:text-white">Request Qty</label>
+                                    <input type="number" name="qty" class="form-control rounded-left">
+                                </div>
+                                <div class="form-group">
                                     <label for="required_date" class="block mb-2 font-medium text-gray-900 dark:text-white">Required Date</label>
                                     <input type="date" name="required_date" class="form-control rounded-left">
                                 </div>

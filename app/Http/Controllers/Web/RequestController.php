@@ -29,7 +29,8 @@ class RequestController extends Controller
             'patient_id'=>'required',
             'hospital'=>'required',
             'asking_bg'=>'required',
-            'required_date'=>'required'
+            'required_date'=>'required',
+            'qty'=>'required'
         ]);
         try {
             BloodRequest::create([
@@ -38,6 +39,7 @@ class RequestController extends Controller
                 'operation'=>$request->operation,
                 'hospital_address'=>$request->hospital_address,
                 'asking_bg'=>$request->asking_bg,
+                'qty'=>$request->qty,
                 'required_date'=>$request->required_date,
                 'required_time'=>$request->required_time,
             ]);
