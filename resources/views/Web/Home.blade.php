@@ -59,12 +59,8 @@
                                     <h2 class="mb-0"><a href="#">{{ $donor->name }}</a></h2>
                                     <div class="d-flex mb-3">
                                         <span class="cat">{{ $donor->email }}</span>
-                                        <p class="price ml-auto">$500 <span>/day</span></p>
+                                        {{-- <p class="price ml-auto">$500 <span>/day</span></p> --}}
                                     </div>
-                                    <p class="d-flex mb-0 d-block">
-                                        <a href="#" class="btn btn-primary py-2 mr-1">Book now</a>
-                                        <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
-                                    </p>
                                 </div>
                             </div>
                         @endforeach
@@ -117,10 +113,10 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
                     <span class="subheading">Patients who got Blood in need</span>
-                    <h2 class="mb-3">Happy Clients</h2>
+                    <h2 class="mb-3">Happy Patients</h2>
                 </div>
             </div>
-            <div class="row ftco-animate">
+            {{-- <div class="row ftco-animate">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
                         @foreach ($patients as $patient)
@@ -131,6 +127,25 @@
                                         <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                         <p class="name">{{ $patient->name }}</p>
                                         <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div> --}}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel-car owl-carousel">
+                        @foreach ($patients as $patient)
+                            <div class="item">
+                                <div class="car-wrap rounded ftco-animate">
+                                    <div class="img rounded d-flex align-items-end" style="background-image: url('{{ url('/users/'.$patient->image) }}');"></div>
+                                </div>
+                                <div class="text">
+                                    <h2 class="mb-0"><a href="#">{{ $patient->name }}</a></h2>
+                                    <div class="d-flex mb-3">
+                                        <span class="cat">{{ $patient->email }}</span>
                                     </div>
                                 </div>
                             </div>
