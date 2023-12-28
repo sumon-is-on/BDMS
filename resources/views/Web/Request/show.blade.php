@@ -30,8 +30,8 @@
                 <div class="col-md-3"></div>
             </div>
         <div>
-            <a href="" class=" btn btn-info">Back</a>
-            <a href="" class=" btn btn-success">Donate</a>
+            <a href="{{ route('web.request.list') }}" class=" btn btn-info">Back</a>
+            <a href="{{ route('donation.create', $br->id) }}" class=" btn btn-success">Donate</a>
         </div>
     </div>
 </div>

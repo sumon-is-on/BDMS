@@ -22,7 +22,7 @@
                             </div>
                             <div>
                                 <a href="{{ route('web.request.show', $br->id) }}" class=" btn btn-info">View</a>
-                                <a href="" class=" btn btn-success">Donate</a>
+                                {{-- <a href="" class=" btn btn-success">Donate</a> --}}
                             </div>
                         </div>
                     </div>
