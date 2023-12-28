@@ -9,7 +9,7 @@
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 @if (auth()->user())
                 <li class="nav-item"><a href="{{ route('user.logout') }}" class="nav-link">LogOut</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="{{ route('web.user.profile', auth()->user()->id) }}" class="nav-link">Profile</a></li>
                 @else
                 <li class="nav-item"><a href="{{ route('user.login') }}" class="nav-link">Login</a></li>
                 @endif

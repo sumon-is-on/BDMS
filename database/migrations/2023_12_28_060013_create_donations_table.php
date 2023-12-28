@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void{
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->nullable()->cascadeOnDelete();
+            $table->foreignId('br_id')->nullable()->cascadeOnDelete();
             $table->foreignId('donor_id')->nullable()->cascadeOnDelete();
             $table->string('last_do_date')->nullable();
             $table->string('status')->default(1);

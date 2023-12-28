@@ -14,11 +14,11 @@
                                     <input type="hidden" name="donor_id" class="form-control rounded-left" value="{{ auth()->user()->id }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" name="hospital_address" class="form-control rounded-left" value="{{ request()->br_id }}">
+                                    <input type="hidden" name="br_id" class="form-control rounded-left" value="{{ request()->id }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="last_do_date" class="block mb-2 font-medium text-gray-900 dark:text-white">Last Donation Date</label>
-                                    <input type="text" name="last_do_date" class="form-control rounded-left" >
+                                    <input type="date" name="last_do_date" class="form-control rounded-left" >
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                                 <button type="submit" onclick="return confirm('Are you sure you want to Donate it ?')" class="form-control btn btn-primary rounded submit px-3">Submit</button>
                             </div>
                             <div class="form-group ml-5">
-                                <a href="{{ route('donation.create', request()->id) }}">
+                                <a href="{{ route('web.request.list') }}">
                                     <button type="button" class="form-control btn btn-info rounded submit px-3">Back</button>
                                 </a>
                             </div>

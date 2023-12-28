@@ -25,6 +25,10 @@ Route::get('user_registration',[WebAuthController::class,'registration'])->name(
 Route::post('user_registration',[WebAuthController::class,'registrationPost'])->name('user.registration.post');
 
 
+#userProfile
+Route::get('profile/{id}',[HomeController::class,'profile'])->name('web.user.profile');
+Route::get('profile_update/{id}',[HomeController::class,'edit'])->name('web.profile.edit');
+
 # Blood Request List In web
 Route::get('br_list',[RequestController::class,'index'])->name('web.request.list');
 Route::get('br_show/{id}',[RequestController::class,'show'])->name('web.request.show');

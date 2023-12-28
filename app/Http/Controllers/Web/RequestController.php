@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Validator;
 class RequestController extends Controller
 {
     public function index(){
-        $brs = BloodRequest::with('Patient','Donor')->get();
+        $brs = BloodRequest::with('Patient','Donor')
+                ->where('status','pending')->get();
         return view('Web.Request.index', compact('brs'));
     }
 
@@ -46,7 +47,7 @@ class RequestController extends Controller
             notify()->success('Your Request has been submitted. Please wait untill someone accepts.');
             return to_route('web.home');
         } catch (\Throwable $th) {
-            // notify()->error($th->getMessage());
+            notify()->error($th->getMessage());
             return redirect()->back();
         }
     }
