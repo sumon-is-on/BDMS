@@ -27,7 +27,8 @@ Route::post('user_registration',[WebAuthController::class,'registrationPost'])->
 
 #userProfile
 Route::get('profile/{id}',[HomeController::class,'profile'])->name('web.user.profile');
-Route::get('profile_update/{id}',[HomeController::class,'edit'])->name('web.profile.edit');
+Route::get('profile_edit/{id}',[HomeController::class,'edit'])->name('web.profile.edit');
+Route::put('profile_update/{id}',[HomeController::class,'update'])->name('web.profile.update');
 
 # Blood Request List In web
 Route::get('br_list',[RequestController::class,'index'])->name('web.request.list');

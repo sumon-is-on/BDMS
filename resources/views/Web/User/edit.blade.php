@@ -7,7 +7,8 @@
             <div class="col-md-12">
                 <div class="login-wrap p-4 p-md-5">
                     <h4 class="text-center mb-4">Registration for BDMS</h4>
-                    <form action="{{ route('user.registration.post') }}" method="POST" class="login-form" enctype="multipart/form-data">
+                    <form action="{{ route('web.profile.update', $user->id) }}" method="POST" class="login-form" enctype="multipart/form-data">
+                        @method('PUT')
                         @csrf
                         <div class="row">
                             <div class="col-md-6">

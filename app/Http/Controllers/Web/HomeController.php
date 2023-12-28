@@ -27,4 +27,33 @@ class HomeController extends Controller
         $user = User::find($id);
         return view('Web.User.edit',compact('user','roles'));
     }
+
+    public function update(Request $request, $id){
+        $user = User::find($id);
+        try {
+            $filename=null;
+            if($request->hasFile('image')){
+                $image=$request->file('image');
+                $filename=date('Ymdhis').'.'.$image->getClientOriginalExtension();
+                $image->storeAs('/users',$filename);
+            }
+            $user->update([
+                'name'=>$request->input('name',$user->name),
+                'role_id'=>$request->input('role_id',$user->role_id),
+                'image'=>$filename ?? $user->image,
+                'email'=>$request->input('email',$user->email),
+                'gender'=>$request->input('gender',$user->gender),
+                'phone'=>$request->input('phone',$user->phone),
+                'blood_group'=>$request->input('blood_group',$user->blood_group),
+                'address'=>$request->input('address',$user->address)
+            ]);
+            $user->save();
+                notify()->success('Profile updated successfully');
+                return to_route('web.user.profile',$user->id);
+            } catch (\Throwable $th) {
+                notify()->error($th->getMessage());
+                return redirect()->back();
+        }
+    }
+
 }

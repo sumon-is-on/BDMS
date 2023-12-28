@@ -13,7 +13,7 @@
         <p class="mt-2"><span><b>Contact: </b>{{ $user->phone }}</span></p> <!-- Added margin-top -->
         <p class="mt-2"><span class="ml-7"><b>Email: </b>{{ $user->email }}</span></p> <!-- Added margin-top -->
         <div class="flex justify-end space-x-4 mt-4"> <!-- Added margin-top -->
-            <a href="{{ route('user.index') }}" class="btn btn-info mb-2">Back</a>
+            <a href="{{ route('web.home') }}" class="btn btn-info mb-2">Back</a>
             @if (auth()->user()->id == $user->id)
                 <a href="{{ route('web.profile.edit', $user->id) }}" class="btn btn-warning mb-2">Update</a>
             @endif
