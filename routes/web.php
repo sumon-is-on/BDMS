@@ -47,6 +47,9 @@ Route::post('donation_store',[DonationController::class,'store'])->name('donatio
 Route::get('contact_create',[ContactController::class,'create'])->name('contact.create');
 Route::post('contact_store',[ContactController::class,'store'])->name('contact.store');
 
+#About Us
+Route::get('about',[HomeController::class,'about'])->name('web.about');
+
 
 
 # ADMIN PANEL

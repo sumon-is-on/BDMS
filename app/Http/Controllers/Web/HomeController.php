@@ -17,17 +17,20 @@ class HomeController extends Controller
         return view('Web.Home', compact('donors','patients'));
     }
 
+    # profile
     public function profile($id){
         $user = User::find($id);
         return view('Web.User.profile',compact('user'));
     }
 
+    # profile edit
     public function edit($id){
         $roles = Role::where('id','!=',1)->get();
         $user = User::find($id);
         return view('Web.User.edit',compact('user','roles'));
     }
 
+    #profile update
     public function update(Request $request, $id){
         $user = User::find($id);
         try {
@@ -54,6 +57,11 @@ class HomeController extends Controller
                 notify()->error($th->getMessage());
                 return redirect()->back();
         }
+    }
+
+    #About
+    public function about(){
+        return view('Web.Pages.about');
     }
 
 }
