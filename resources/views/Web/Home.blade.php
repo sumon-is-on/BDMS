@@ -75,7 +75,7 @@
     </section>
 
 
-    <section class="ftco-section">
+    {{-- <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="ftco-section ftco-intro" style="background-image: url(images/bg_3.jpg);">
         <div class="overlay"></div>
@@ -116,15 +116,15 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Patiens who got Blood in need</span>
+                    <span class="subheading">Patients who got Blood in need</span>
                     <h2 class="mb-3">Happy Clients</h2>
                 </div>
             </div>
             <div class="row ftco-animate">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
-                        <div class="item">
-                            @foreach ($patients as $patient)
+                        @foreach ($patients as $patient)
+                            <div class="item">
                                 <div class="testimony-wrap rounded text-center py-4 pb-5">
                                     <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)"></div>
                                     <div class="text pt-4">
@@ -133,11 +133,12 @@
                                         <span class="position">Marketing Manager</span>
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 @endsection

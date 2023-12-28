@@ -8,6 +8,7 @@ use App\Models\BloodRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class DonationController extends Controller
 {
@@ -38,6 +39,7 @@ class DonationController extends Controller
                 notify()->warning("You are not eligible to donate. Your last donation date must be at least 120 days ago.");
                 return redirect()->back();
             }
+
             if ($bloodRequest) {
                 Donation::create([
                     'br_id' => $bloodRequestId,
@@ -49,9 +51,18 @@ class DonationController extends Controller
                     'donor_id' => $request->donor_id,
                     'status' => "accepted"
                 ]);
+
+                $donation = Donation::with('Donor')->where('donor_id', $request->donor_id)->first();
+                Mail::send('Web.Emails.requestAccept', [
+                    'bloodRequest' => $bloodRequest,
+                    'donation' => $donation
+                ], function ($message) use ($bloodRequest) {
+                    $message->to($bloodRequest->Patient->email)->subject("Blood Request Accept");
+                });
+
+                notify()->success('Thanks for donating. You have done a great job. The patient will contact you soon.');
+                return redirect()->route('web.home');
             }
-            notify()->success('Thanks for donating. You hav done a great job. Patient will contact you soon.');
-            return to_route('web.home');
         } catch (\Throwable $th) {
             notify()->error($th->getMessage());
             return redirect()->back();
