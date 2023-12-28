@@ -23,7 +23,7 @@
                     <div class="col-md-12 align-items-center">
                         <div class="flex justify-content-center align-items-center">
 
-                            <a href="">
+                            <a href="{{ route('web.request.list') }}">
                                 <button type="button" class="btn btn-success form-control w-30">Donate Blood</button>
                             </a>
                             <div style="margin: 0 50px;"></div>

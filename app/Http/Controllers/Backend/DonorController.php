@@ -14,6 +14,7 @@ class DonorController extends Controller
             $donors = User::where(function($query) use ($search) {
                 $query->where('name', 'like', "%$search%")
                       ->orWhere('email', 'like', "%$search%")
+                      ->orWhere('blood_group', 'like', "%$search%")
                       ->orWhere('phone', 'like', "%$search%");
             })
             ->where('role_id', 2)

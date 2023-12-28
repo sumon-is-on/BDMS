@@ -32,6 +32,7 @@
                     <th scope="col" class="py-3 px-6">Sl</th>
                     <th scope="col" class="py-3 px-6">Name</th>
                     <th scope="col" class="py-3 px-6">Image</th>
+                    <th scope="col" class="py-3 px-6">Blood group</th>
                     <th scope="col" class="py-3 px-6">Email</th>
                     <th scope="col" class="py-3 px-6">Contact</th>
                     <th scope="col" class="py-3 px-6">Gender</th>
@@ -47,6 +48,7 @@
                     <td class="text-sm text-gray-900 font-light px-6 py-1 whitespace-nowrap">
                         <img class="max-w-full h-auto rounded-full" src="{{ url('/users/'.$user->image)}}" width="35px">
                     </td>
+                    <td class="py-1 px-6">{{ $user->blood_group }}</td>
                     <td class="py-1 px-6">{{ $user->email }}</td>
                     <td class="py-1 px-6 uppercase">{{ $user->phone }}</td>
                     <td class="py-1 px-6 uppercase">{{ $user->gender }}</td>

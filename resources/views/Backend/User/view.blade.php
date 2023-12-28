@@ -10,13 +10,17 @@
     </div>
 </div>
 <div class="p-4 md:p-12 text-center lg:text-left">
-    <img src="{{ asset('/users/' . $user->image) }}" alt="User Image" class="rounded-full h-32 w-32 mx-auto lg:mx-0 lg:mr-6">
-    <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{ $user->name }}</h1>
-    <p><span><b>Contact: </b>{{ $user->blood_group }}</span></p>
-    <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">Address: {{ $user->address }}</p>
-    <p><span><b>Contact: </b>{{ $user->phone }}</span></p>
-    <p><span class="ml-7"><b>Email: </b>{{ $user->email }}</span></p>
-    <div class="flex justify-end space-x-4 m-7">
+    <div class="flex justify-center items-center mb-6"> <!-- Added margin-bottom -->
+        <img src="{{ asset('/users/' . $user->image) }}" alt="User Image" class="rounded-full" style="height: 300px; width: 300px;">
+    </div>
+    <div class="mt-6"> <!-- Added margin-top -->
+        <p class="text-8xl font-bold pt-8 lg:pt-0"><b>{{ $user->name }}</b></p>
+    </div>
+    <p class="mt-4"><span><b>Blood Group: </b>{{ $user->blood_group }}</span></p> <!-- Added margin-top -->
+    <p class="mt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"> <b>Address:  </b> {{ $user->address }}</p>
+    <p class="mt-2"><span><b>Contact: </b>{{ $user->phone }}</span></p> <!-- Added margin-top -->
+    <p class="mt-2"><span class="ml-7"><b>Email: </b>{{ $user->email }}</span></p> <!-- Added margin-top -->
+    <div class="flex justify-end space-x-4 mt-4"> <!-- Added margin-top -->
         <a href="{{ route('user.index') }}" class="btn btn-info mb-2">Back</a>
         @if (auth()->user()->id == $user->id)
             <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning mb-2">Update</a>
