@@ -6,7 +6,7 @@
                 <li class="nav-item active"><a href="{{ route('web.home') }}" class="nav-link">Home</a></li>
                 {{-- <li class="nav-item"><a href="about.html" class="nav-link">About</a></li> --}}
                 {{-- <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li> --}}
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{ route('contact.create') }}" class="nav-link">Contact</a></li>
                 @if (auth()->user())
                     <li class="nav-item"><a href="{{ route('user.logout') }}" class="nav-link">LogOut</a></li>
                     <li class="nav-item"><a href="{{ route('web.user.profile', auth()->user()->id) }}" class="nav-link">Profile</a></li>

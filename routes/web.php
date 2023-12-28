@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\RequestController as BackendRequestController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Web\AuthController as WebAuthController;
+use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\DonationController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\RequestController;
@@ -40,6 +41,10 @@ Route::post('/blood_request_post',[RequestController::class,'store'])->name('req
 #Donation
 Route::get('donation_create/{id}',[DonationController::class,'create'])->name('donation.create');
 Route::post('donation_store',[DonationController::class,'store'])->name('donation.store');
+
+
+#Contact
+Route::get('contact_create',[ContactController::class,'create'])->name('contact.create');
 
 
 
