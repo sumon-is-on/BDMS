@@ -26,6 +26,9 @@
                 <li class="nav-item menu-open">
                     <a href="{{ route('service.index') }}" class="nav-link"><p>Services</p></a>
                 </li>
+                <li class="nav-item menu-open">
+                    <a href="{{ route('contact.index') }}" class="nav-link"><p>Contact Us</p></a>
+                </li>
             </ul>
         </nav>
     </div>

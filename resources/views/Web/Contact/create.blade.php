@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="login-wrap p-4 p-md-5">
                     <h4 class="text-center mb-4">Please Fill up this form to ask your queries</h4>
-                    <form action="{{ route('request.post') }}" method="POST" class="login-form" enctype="multipart/form-data">
+                    <form action="{{ route('contact.store') }}" method="POST" class="login-form" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="block mb-2 font-medium text-gray-900 dark:text-white">email</label>
-                                    <input type="text" name="email" class="form-control rounded-left" placeholder="Enter email address" required>
+                                    <input type="email" name="email" class="form-control rounded-left" placeholder="Enter email address" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="message" class="block mb-2 font-medium text-gray-900 dark:text-white">Message</label>

@@ -45,6 +45,7 @@ Route::post('donation_store',[DonationController::class,'store'])->name('donatio
 
 #Contact
 Route::get('contact_create',[ContactController::class,'create'])->name('contact.create');
+Route::post('contact_store',[ContactController::class,'store'])->name('contact.store');
 
 
 
@@ -88,6 +89,10 @@ Route::middleware('auth')->group(function(){
     Route::get('service_edit/{id}',[ServiceController::class,'edit'])->name('service.edit');
     Route::put('service_update/{id}',[ServiceController::class,'update'])->name('service.update');
     Route::get('service_delete/{id}',[ServiceController::class,'delete'])->name('service.delete');
+
+
+    # Contact
+    Route::get('contact_index',[ContactController::class,'index'])->name('contact.index');
 });
 
 
