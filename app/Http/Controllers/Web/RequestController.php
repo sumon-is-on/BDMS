@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\BloodRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\BloodRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RequestController extends Controller
@@ -38,7 +40,7 @@ class RequestController extends Controller
             'qty'=>'required|max:3'
         ]);
         try {
-            BloodRequest::create([
+            $bloodRequest = BloodRequest::create([
                 'patient_id'=>$request->patient_id,
                 'hospital'=>$request->hospital,
                 'operation'=>$request->operation,
@@ -48,6 +50,20 @@ class RequestController extends Controller
                 'required_date'=>$request->required_date,
                 'required_time'=>$request->required_time,
             ]);
+
+            $patient = BloodRequest::with('Patient')->where('id', $bloodRequest->id)->first();
+            if ($patient) {
+                $users = User::where('role_id',3)->where('blood_group',$bloodRequest->asking_bg)->get();
+                foreach($users as $user){
+                    Mail::send('Web.Emails.donorNotification', [
+                        'patient' => $patient->Patient,
+                        'bloodRequest' => $bloodRequest
+                    ], function ($message) use ($user) {
+                        $message->to($user->email)->subject("New Blood Request");
+                    });
+                }
+            }
+
             notify()->success('Your Request has been submitted. Please wait untill someone accepts.');
             return to_route('web.home');
         } catch (\Throwable $th) {
