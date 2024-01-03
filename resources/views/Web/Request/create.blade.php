@@ -19,8 +19,8 @@
                                     <input type="text" name="hospital_address" class="form-control rounded-left" placeholder="Enter the hospital address">
                                 </div>
                                 <div class="form-group">
-                                    <label for="operation" class="block mb-2 font-medium text-gray-900 dark:text-white">Operation Name</label>
-                                    <input type="text" name="operation" class="form-control rounded-left" placeholder="The operation name">
+                                    <label for="operation" class="block mb-2 font-medium text-gray-900 dark:text-white">Reason</label>
+                                    <input type="text" name="operation" class="form-control rounded-left" placeholder="The resaon of blood rquest">
                                 </div>
                                 <div class="form-group">
                                     <label for="asking_bg" class="block mb-2 font-medium text-gray-900 dark:text-white">Asking Blood Group</label>
@@ -28,15 +28,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="qty" class="block mb-2 font-medium text-gray-900 dark:text-white">Request Qty</label>
-                                    <input type="number" name="qty" class="form-control rounded-left">
+                                    <input type="number" id="qty" name="qty" class="form-control rounded-left">
                                 </div>
                                 <div class="form-group">
                                     <label for="required_date" class="block mb-2 font-medium text-gray-900 dark:text-white">Required Date</label>
-                                    <input type="date" name="required_date" class="form-control rounded-left">
+                                    <input type="date" id="required_date" name="required_date" class="form-control rounded-left">
                                 </div>
                                 <div class="form-group">
                                     <label for="required_time" class="block mb-2 font-medium text-gray-900 dark:text-white">Required Time</label>
-                                    <input type="time" name="required_time" class="form-control rounded-left">
+                                    <input type="time" id="required_time" name="required_time" class="form-control rounded-left">
                                 </div>
                             </div>
 
@@ -62,7 +62,7 @@
                         </div>
                         <div class="flex space-x-4">
                             <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Submit</button>
+                                <button type="submit" onclick="validateForm()" class="form-control btn btn-primary rounded submit px-3">Submit</button>
                             </div>
                             <div class="form-group ml-5">
                                 <a href="{{ route('web.home') }}">
@@ -76,4 +76,35 @@
         </div>
     </div>
 </section>
+<script>
+    function validateForm() {
+        var qty = document.getElementById('qty').value;
+        var date = document.getElementById('required_date').value;
+        var time = document.getElementById('required_time').value;
+
+        // Validation for quantity
+        if (qty > 3) {
+            alert('More than 3 bags are not allowed');
+            return;
+        }
+
+        // Validation for date
+        var currentDate = new Date();
+        var selectedDate = new Date(date);
+        if (selectedDate < currentDate) {
+            alert('Please select the current or future date');
+            return;
+        }
+
+        // Validation for time
+        var currentTime = new Date().toLocaleTimeString('en-US', {hour12: false});
+        if (time < currentTime) {
+            alert('Please select a time after the current time');
+            return;
+        }
+
+        // If all validations pass, you can submit the form or perform other actions
+        document.getElementById('myForm').submit();
+    }
+</script>
 @endsection

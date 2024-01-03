@@ -30,8 +30,12 @@ class RequestController extends Controller
             'patient_id'=>'required',
             'hospital'=>'required',
             'asking_bg'=>'required',
-            'required_date'=>'required',
-            'qty'=>'required'
+            'required_date' => [
+                'required',
+                'date',
+                'after_or_equal:' . now()->toDateString(),
+            ],
+            'qty'=>'required|max:3'
         ]);
         try {
             BloodRequest::create([
