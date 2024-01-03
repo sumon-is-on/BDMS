@@ -57,7 +57,7 @@ Route::get('about',[HomeController::class,'about'])->name('web.about');
 Route::get('admin_login',[AuthController::class,'login'])->name('admin.login');
 Route::post('admin_login_post',[AuthController::class,'loginPost'])->name('admin.login.post');
 
-Route::middleware('auth')->group(function(){
+Route::middleware('auth','checkAdmin')->group(function(){
 
     # logout
     Route::get('admin_logout',[AuthController::class,'logout'])->name('admin.logout');

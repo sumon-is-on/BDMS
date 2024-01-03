@@ -19,12 +19,12 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h1 class="m-0">Dashboard</h1>
+                                <h1 class="m-0"></h1>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class=" mr-4">
+                <div class=" mt-3 mr-4">
                     <a href="{{ route('user.show', auth()->user()->id) }}" class="btn btn-outline-success">Profile</a>
                     <a href="{{ route('admin.logout') }}" class="btn btn-outline-danger">LogOut</a>
                 </div>
