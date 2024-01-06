@@ -76,6 +76,7 @@ Route::middleware('auth','checkAdmin')->group(function(){
     # Patients
     Route::get('patient_index',[PatientController::class,'index'])->name('patient.index');
     Route::get('patient_view/{id}',[PatientController::class,'show'])->name('patient.show');
+    Route::get('patient_history/{id}',[PatientController::class,'history'])->name('patient.history');
 
     # Donors
     Route::get('donor_index',[DonorController::class,'index'])->name('donor.index');

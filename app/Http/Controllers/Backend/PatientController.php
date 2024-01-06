@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\BloodRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -27,5 +28,11 @@ class PatientController extends Controller
     public function show($id){
         $patient=User::find($id);
         return view('Backend.Patient.view',compact('patient'));
+    }
+
+
+    public function history($id){
+        $histories = BloodRequest::with('Donor')->where('patient_id',$id)->get();
+        return view('Backend.Patient.history',compact('histories'));
     }
 }
