@@ -30,6 +30,10 @@
                                         <input type="text" name="phone" class="form-control rounded-left" placeholder="Contact Number" required>
                                     </div>
                                     <div class="form-group">
+                                        <label for="Contact Number" class="block mb-2 font-medium text-gray-900 dark:text-white">Blood Group</label>
+                                        <input type="text" name="blood_group" class="form-control rounded-left" placeholder="Blood group" required>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="image" class="block mb-2 font-medium text-gray-900 dark:text-white">Image</label>
                                         <input type="file" class="form-control" name="image" id="image" aria-describedby="image-explanation">
                                     </div>
