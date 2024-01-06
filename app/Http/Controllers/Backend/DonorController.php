@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Donation;
 
 class DonorController extends Controller
 {
@@ -28,5 +29,10 @@ class DonorController extends Controller
     public function show($id){
         $donor=User::find($id);
         return view('Backend.Donor.view',compact('donor'));
+    }
+
+    public function history($id){
+        $histories = Donation::with('BloodRequest.Patient','Donor')->where('donor_id',$id)->get();
+        return view('Backend.Donor.history',compact('histories'));
     }
 }

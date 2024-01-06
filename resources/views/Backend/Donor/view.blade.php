@@ -23,6 +23,7 @@
     <p class="mt-2"><span class="ml-7"><b>Email: </b>{{ $donor->email }}</span></p> <!-- Added margin-top -->
     <div class="flex justify-end space-x-4 mt-4"> <!-- Added margin-top -->
         <a href="{{ route('donor.index') }}" class="btn btn-info mb-2">Back</a>
+        <a href="{{ route('donor.history', $donor->id) }}" class="btn btn-success mb-2 ml-2">History</a>
         @if (auth()->user()->id == $donor->id)
             <a href="{{ route('user.edit', $donor->id) }}" class="btn btn-warning mb-2">Update</a>
         @endif

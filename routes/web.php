@@ -77,9 +77,10 @@ Route::middleware('auth','checkAdmin')->group(function(){
     Route::get('patient_index',[PatientController::class,'index'])->name('patient.index');
     Route::get('patient_view/{id}',[PatientController::class,'show'])->name('patient.show');
 
-    # Patients
+    # Donors
     Route::get('donor_index',[DonorController::class,'index'])->name('donor.index');
     Route::get('donor_view/{id}',[DonorController::class,'show'])->name('donor.show');
+    Route::get('donor_history/{id}',[DonorController::class,'history'])->name('donor.history');
 
 
     # Blood Request

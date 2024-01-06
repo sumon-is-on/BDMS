@@ -11,7 +11,7 @@ class Donation extends Model
     protected $guarded=[];
 
     public function BloodRequest(){
-        return $this->belongsTo(User::class,'br_id','id');
+        return $this->belongsTo(BloodRequest::class,'br_id','id');
     }
     public function Donor(){
         return $this->belongsTo(User::class,'donor_id','id');
