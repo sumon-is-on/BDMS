@@ -22,6 +22,11 @@ class User extends Authenticatable{
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    # belongsTo -> mendatory one
+    # hasOne -> optional one
+
+    # belongsToMany -> mendatory many
+    # hasMany ->optional many (at least one )
 
     public function Roles(){
         return $this->belongsTo(Role::class,'role_id','id');

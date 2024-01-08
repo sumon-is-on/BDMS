@@ -57,7 +57,7 @@
                     <td class="py-1 px-6 uppercase">{{ $brs->status }}</td>
                     <td class="py-1 px-6">
                         <div class="flex">
-                        <a href="#"class="text-indigo-600 hover:text-indigo-900">
+                        <a href="{{ route('backend.request.show', $brs->id) }}"class="text-indigo-600 hover:text-indigo-900">
                             <svg class="h-5 w-5 fill-current text-indigo-700" viewBox="0 0 24 24" width="24" height="24">
                             <path fill="none" d="M0 0h24v24H0z"/>
                             <path d="M12 3c5.392 0 9.878 3.88 10.819 9-.94 5.12-5.427 9-10.819 9-5.392 0-9.878-3.88-10.819-9C2.121 6.88 6.608 3 12 3zm0 16a9.005 9.005 0 0 0 8.777-7 9.005 9.005 0 0 0-17.554 0A9.005 9.005 0 0 0 12 19zm0-2.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0-2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>

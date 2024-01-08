@@ -19,4 +19,11 @@ class RequestController extends Controller
         }
         return view('Backend.Request.index', compact('brs','search'));
     }
+
+
+    public function show($id){
+        $values = BloodRequest::with('Patient','Donor')->where('id',$id)->get();
+        // dd($brs);
+        return view('Backend.Request.show',compact('values'));
+    }
 }

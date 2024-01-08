@@ -16,7 +16,7 @@ use App\Http\Controllers\Web\RequestController;
 
 Route::get('/',[HomeController::class,'home'])->name('web.home');
 
-
+# Frontend
 # Web Login
 Route::get('user_login',[WebAuthController::class,'webLogin'])->name('user.login');
 Route::post('user_login_post',[WebAuthController::class,'loginPost'])->name('user.login.post');
@@ -53,7 +53,7 @@ Route::get('about',[HomeController::class,'about'])->name('web.about');
 
 
 # ADMIN PANEL
-#ADMIN authLogin
+# ADMIN authLogin
 Route::get('admin_login',[AuthController::class,'login'])->name('admin.login');
 Route::post('admin_login_post',[AuthController::class,'loginPost'])->name('admin.login.post');
 
@@ -86,6 +86,8 @@ Route::middleware('auth','checkAdmin')->group(function(){
 
     # Blood Request
     Route::get('blood_request_list',[BackendRequestController::class,'index'])->name('backend.request.list');
+    Route::get('blood_request_show/{id}',[BackendRequestController::class,'show'])->name('backend.request.show');
+
 
     #Service
     Route::get('service_index',[ServiceController::class,'index'])->name('service.index');
