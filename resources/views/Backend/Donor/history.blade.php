@@ -14,7 +14,7 @@
 <section class="content">
     <div class="container-fluid" id="donor-history">
         <div style="margin:20px;">
-            <h2>{{ $histories[0]->Donor->name }}</h2>
+            <h2>{{ $histories[0]->Donor->name ?? ""}}</h2>
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-900 uppercase dark:text-gray-400">
                     <tr>
