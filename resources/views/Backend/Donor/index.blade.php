@@ -3,7 +3,7 @@
 <div class="content-header m-8">
     <div class=" container">
         <div class="row mb-2">
-            <div class="col-sm-6">
+            <div class="col-sm-6 ml-3">
                 <h1>Donor Index</h1>
             </div>
         </div>

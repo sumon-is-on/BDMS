@@ -33,6 +33,7 @@ class DonorController extends Controller
 
     public function history($id){
         $histories = Donation::with('BloodRequest.Patient','Donor')->where('donor_id',$id)->get();
+        // dd($histories);
         return view('Backend.Donor.history',compact('histories'));
     }
 }
