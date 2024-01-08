@@ -11,7 +11,7 @@
 </div>
 
 <section class="content">
-    <div class="container-fluid">
+    <div class="container-fluid" id="donor-history">
         <div style="margin:20px;">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-900 uppercase dark:text-gray-400">
@@ -37,7 +37,22 @@
                 </tbody>
                 @endforeach
             </table>
+            <button onclick="printDonorHistory()" type="button" class="btn btn-info">Download</button>
         </div>
     </div>
 </section>
+<script>
+    function printDonorHistory() {
+        var headerContents = document.querySelector('.content-header').innerHTML;
+        var historyContents = document.getElementById('donor-history').innerHTML;
+        var printContents = headerContents + historyContents;
+
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection
