@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="login-wrap p-4 p-md-5">
-                    <h4 class="text-center mb-4">Please Fill up this form to ask your queries</h4>
+                    <h4 class="text-center mb-4" style="font-size: 3rem">Contact Us</h4>
                     <form action="{{ route('contact.store') }}" method="POST" class="login-form" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
