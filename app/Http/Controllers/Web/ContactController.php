@@ -14,6 +14,8 @@ class ContactController extends Controller
         $contacts = Contact::all();
         return view('Backend.Contact.index',compact('contacts'));
     }
+
+    
     public function create(){
         return view('Web.Contact.create');
     }
